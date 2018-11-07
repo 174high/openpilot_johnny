@@ -180,27 +180,63 @@ class dbc(object):
     msg_def = self.msgs[msg_id]
     size = msg_def[0][1]
 
+    print "msg_def="
+    print msg_def
+    print ("size=%d"%size) 
+
+    print "dd="
+    print dd 
+
     result = 0
     for s in msg_def[1]:
       ival = dd.get(s.name)
+     
+      print "get each data"
+      print s
+      print "get detail value"
+      print ival 
+
       if ival is not None:
 
         b2 = s.size
+
+ 	print "b2=s.size"
+ 	print b2
+	print "is_little_endian"
+	print s.is_little_endian 
+
         if s.is_little_endian:
           b1 = s.start_bit
         else:
           b1 = (s.start_bit // 8) * 8 + (-s.start_bit - 1) % 8
+		
+	print "b1="
+	print b1 
+
+#                 b1=
         bo = 64 - (b1 + s.size)
+	
+	print "b0="
+	print bo  
 
         ival = (ival / s.factor) - s.offset
         ival = int(round(ival))
 
+	print "ival="
+	print ival 
+
         if s.is_signed and ival < 0:
           ival = (1 << b2) + ival
+
+	print ival
 
         shift = b1 if s.is_little_endian else bo
         mask = ((1 << b2) - 1) << shift
         dat = (ival & ((1 << b2) - 1)) << shift
+	
+	print  shift
+	print  mask
+	print  dat 
 
         if s.is_little_endian:
           mask = self.reverse_bytes(mask)
