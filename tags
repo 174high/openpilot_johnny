@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DBCSignal	dbc.py	/^DBCSignal = namedtuple($/;"	v
+DBC_PATH	opendbc/__init__.py	/^DBC_PATH = os.path.dirname(os.path.abspath(__file__))$/;"	v
+__init__	dbc.py	/^  def __init__(self, fn):$/;"	m	class:dbc
+dbc	dbc.py	/^class dbc(object):$/;"	c
+decode	dbc.py	/^  def decode(self, x, arr=None, debug=False):$/;"	m	class:dbc
+encode	dbc.py	/^  def encode(self, msg_id, dd):$/;"	m	class:dbc
+get_signals	dbc.py	/^  def get_signals(self, msg):$/;"	m	class:dbc
+int_or_float	dbc.py	/^def int_or_float(s):$/;"	f
+lookup_msg_id	dbc.py	/^  def lookup_msg_id(self, msg_id):$/;"	m	class:dbc
+reverse_bytes	dbc.py	/^  def reverse_bytes(self, x):$/;"	m	class:dbc
